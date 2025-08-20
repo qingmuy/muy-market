@@ -1,0 +1,5 @@
+spring:
+  config:
+    name: muy-market-app
+  profiles:
+    active: dev
