@@ -37,3 +37,5 @@ build/
 ### Mac OS ###
 .DS_Store
 /docs/
+/muy-market-app/src/test/
+/muy-market-app/src/test/
