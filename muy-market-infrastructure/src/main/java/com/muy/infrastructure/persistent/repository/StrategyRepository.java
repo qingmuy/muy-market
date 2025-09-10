@@ -3,6 +3,7 @@ package com.muy.infrastructure.persistent.repository;
 import com.muy.domain.strategy.model.entity.StrategyAwardEntity;
 import com.muy.domain.strategy.model.entity.StrategyEntity;
 import com.muy.domain.strategy.model.entity.StrategyRuleEntity;
+import com.muy.domain.strategy.model.valobj.StrategyAwardRuleModelVO;
 import com.muy.domain.strategy.repository.IStrategyRepository;
 import com.muy.infrastructure.persistent.dao.IStrategyAwardDao;
 import com.muy.infrastructure.persistent.dao.IStrategyDao;
@@ -20,9 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author Fuzhengwei bugstack.cn @小傅哥
- * @description 策略服务仓储实现
- * @create 2023-12-23 10:33
+ * 策略服务仓储实现
  */
 @Repository
 public class StrategyRepository implements IStrategyRepository {
@@ -90,6 +89,7 @@ public class StrategyRepository implements IStrategyRepository {
         StrategyEntity strategyEntity = redisService.getValue(cacheKey);
         if (null != strategyEntity) return strategyEntity;
         Strategy strategy = strategyDao.queryStrategyByStrategyId(strategyId);
+        if (null == strategy) return StrategyEntity.builder().build();
         strategyEntity = StrategyEntity.builder()
                 .strategyId(strategy.getStrategyId())
                 .strategyDesc(strategy.getStrategyDesc())
@@ -124,5 +124,13 @@ public class StrategyRepository implements IStrategyRepository {
         return strategyRuleDao.queryStrategyRuleValue(strategyRule);
     }
 
+    @Override
+    public StrategyAwardRuleModelVO queryStrategyAwardRuleModelVO(Long strategyId, Integer awardId) {
+        StrategyAward strategyAward = new StrategyAward();
+        strategyAward.setStrategyId(strategyId);
+        strategyAward.setAwardId(awardId);
+        String ruleModels = strategyAwardDao.queryStrategyAwardRuleModels(strategyAward);
+        return StrategyAwardRuleModelVO.builder().ruleModels(ruleModels).build();
+    }
 
 }
