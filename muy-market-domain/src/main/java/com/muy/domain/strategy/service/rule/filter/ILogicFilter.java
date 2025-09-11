@@ -1,4 +1,4 @@
-package com.muy.domain.strategy.service.rule;
+package com.muy.domain.strategy.service.rule.filter;
 
 import com.muy.domain.strategy.model.entity.RuleActionEntity;
 import com.muy.domain.strategy.model.entity.RuleMatterEntity;
