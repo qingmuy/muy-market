@@ -1,5 +1,7 @@
 package com.muy.domain.strategy.service.rule.chain;
 
+import com.muy.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+
 /**
  * Created with IntelliJ IDEA.
  *
@@ -13,8 +15,8 @@ public interface ILogicChain extends ILogicChainArmory {
      *
      * @param userId     用户ID
      * @param strategyId 策略ID
-     * @return 奖品ID
+     * @return 奖品对象
      */
-    Integer logic(String userId, Long strategyId);
+    DefaultChainFactory.StrategyAwardVO logic(String userId, Long strategyId);
 
 }

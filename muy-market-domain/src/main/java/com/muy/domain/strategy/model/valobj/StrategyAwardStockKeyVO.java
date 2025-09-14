@@ -2,22 +2,25 @@ package com.muy.domain.strategy.model.valobj;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
  * Created with IntelliJ IDEA.
  *
  * @author: qingmuy
- * @date: 2025/9/10 23:52
- * @description : 抽奖策略规则规则值对象；值对象，没有唯一ID，仅限于从数据库查询对象
+ * @date: 2025/9/14 22:34
+ * @description : 策略奖品库存Key标识值对象
  */
-@Getter
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class StrategyAwardRuleModelVO {
-    private String ruleModels;
+public class StrategyAwardStockKeyVO {
 
+    // 策略ID
+    private Long strategyId;
+    // 奖品ID
+    private Integer awardId;
 
 }
