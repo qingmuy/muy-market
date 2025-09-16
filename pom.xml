@@ -13,6 +13,7 @@
         <module>muy-market-trigger</module>
         <module>muy-market-infrastructure</module>
         <module>muy-market-types</module>
+        <module>muy-market-api</module>
     </modules>
 
     <repositories>
