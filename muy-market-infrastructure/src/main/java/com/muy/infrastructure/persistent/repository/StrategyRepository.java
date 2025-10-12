@@ -1,10 +1,10 @@
 package com.muy.infrastructure.persistent.repository;
 
-import com.muy.domain.strategy.model.entity.StrategyAwardEntity;
-import com.muy.domain.strategy.model.entity.StrategyEntity;
-import com.muy.domain.strategy.model.entity.StrategyRuleEntity;
-import com.muy.domain.strategy.model.valobj.*;
-import com.muy.domain.strategy.repository.IStrategyRepository;
+import com.muy.domain.activity.model.entity.StrategyAwardEntity;
+import com.muy.domain.activity.model.entity.StrategyEntity;
+import com.muy.domain.activity.model.entity.StrategyRuleEntity;
+import com.muy.domain.activity.model.valobj.*;
+import com.muy.domain.activity.repository.IStrategyRepository;
 import com.muy.infrastructure.persistent.dao.*;
 import com.muy.infrastructure.persistent.po.*;
 import com.muy.infrastructure.persistent.redis.IRedisService;

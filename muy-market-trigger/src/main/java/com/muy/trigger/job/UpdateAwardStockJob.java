@@ -1,7 +1,7 @@
 package com.muy.trigger.job;
 
-import com.muy.domain.strategy.model.valobj.StrategyAwardStockKeyVO;
-import com.muy.domain.strategy.service.IRaffleStock;
+import com.muy.domain.activity.model.valobj.StrategyAwardStockKeyVO;
+import com.muy.domain.activity.service.IRaffleStock;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
