@@ -1,12 +1,12 @@
 package com.muy.domain.activity.repository;
 
-import com.muy.domain.activity.model.aggregate.CreateOrderAggregate;
-import com.muy.domain.activity.model.entity.ActivityCountEntity;
-import com.muy.domain.activity.model.entity.ActivityEntity;
-import com.muy.domain.activity.model.entity.ActivitySkuEntity;
+import com.muy.domain.activity.model.aggregate.CreatePartakeOrderAggregate;
+import com.muy.domain.activity.model.aggregate.CreateQuotaOrderAggregate;
+import com.muy.domain.activity.model.entity.*;
 import com.muy.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,7 +23,7 @@ public interface IActivityRepository {
 
     ActivityCountEntity queryRaffleActivityCountByActivityCountId(Long activityCountId);
 
-    void doSaveOrder(CreateOrderAggregate createOrderAggregate);
+    void doSaveOrder(CreateQuotaOrderAggregate createOrderAggregate);
 
     void cacheActivitySkuStockCount(String cacheKey, Integer stockCount);
 
@@ -38,5 +38,17 @@ public interface IActivityRepository {
     void updateActivitySkuStock(Long sku);
 
     void clearActivitySkuStock(Long sku);
+
+    UserRaffleOrderEntity queryNoUsedRaffleOrder(PartakeRaffleActivityEntity partakeRaffleActivityEntity);
+
+    ActivityAccountEntity queryActivityAccountByUserId(String userId, Long activityId);
+
+    ActivityAccountMonthEntity queryActivityAccountMonthByUserId(String userId, Long activityId, String month);
+
+    ActivityAccountDayEntity queryActivityAccountDayByUserId(String userId, Long activityId, String day);
+
+    void saveCreatePartakeOrderAggregate(CreatePartakeOrderAggregate createPartakeOrderAggregate);
+
+    List<ActivitySkuEntity> queryActivitySkuListByActivityId(Long activityId);
 
 }

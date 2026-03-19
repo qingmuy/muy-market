@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
  *
  * @author: qingmuy
  * @date: 2025/10/5 18:15
- * @description : 活动账户实体对象
+ * @description : 活动账户（总）实体对象
  */
 @Data
 @Builder
